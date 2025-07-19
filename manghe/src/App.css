@@ -74,3 +74,47 @@
 .login-form button:hover {
   background-color: #535bf2;
 }
+
+/* 可爱的注册表单样式 */
+.registration-form {
+  background-color: #ffebf5; /* 柔和的粉色背景 */
+  border-radius: 20px; /* 更圆润的边框 */
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3); /* 粉色的阴影 */
+  padding: 2em;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.registration-form input {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border: 1px solid #ffc0cb; /* 粉色的边框 */
+  border-radius: 10px; /* 更圆润的输入框 */
+  box-sizing: border-box;
+  font-size: 1em;
+  color: #ff69b4; /* 粉色的文字 */
+}
+
+.registration-form input::placeholder {
+  color: #ffb6c1; /* 更淡的粉色占位符文字 */
+}
+
+.registration-form button {
+  width: 100%;
+  padding: 0.8em;
+  background-color: #ff69b4; /* 粉色的按钮 */
+  color: white;
+  border: none;
+  border-radius: 10px; /* 更圆润的按钮 */
+  cursor: pointer;
+  transition: background-color 0.25s;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.registration-form button:hover {
+  background-color: #ff1493; /* 更深的粉色悬停效果 */
+}

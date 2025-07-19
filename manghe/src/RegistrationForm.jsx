@@ -1,25 +1,21 @@
+// src/RegistrationForm.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 
-function LoginForm({ onLoginSuccess }) {
+function RegistrationForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleRegistration = () => {
+    // 这里可以添加实际的注册逻辑，比如调用 API
     console.log(`Username: ${username}, Password: ${password}`);
-    // 这里可以添加实际的登录逻辑，比如调用 API
-    // 假设登录成功
-    onLoginSuccess();
-    navigate('/welcome');
-  };
-
-  const handleRegister = () => {
-    navigate('/register');
+    // 模拟注册成功后跳转到登录页
+    navigate('/login');
   };
 
   return (
-    <div className="login-form">
+    <div className="registration-form">
       <input
         type="text"
         placeholder="Username"
@@ -34,12 +30,9 @@ function LoginForm({ onLoginSuccess }) {
         onChange={(e) => setPassword(e.target.value)}
       />
       <br />
-      <button onClick={handleLogin}>Login</button>
-      <br />
-      <br />
-      <button onClick={handleRegister}>Register</button>
+      <button onClick={handleRegistration}>Register</button>
     </div>
   );
 }
 
-export default LoginForm;
+export default RegistrationForm;

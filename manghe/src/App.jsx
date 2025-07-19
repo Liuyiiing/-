@@ -1,17 +1,39 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router';
 import './App.css'
 import LoginForm from './LoginForm.jsx';
+import WelcomePage from './WelcomePage.jsx';
+import RegistrationForm from './RegistrationForm.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+  };
 
   return (
-    <>
-      <LoginForm />
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route
+          path="/login"
+          element={<LoginForm onLoginSuccess={handleLoginSuccess} />}
+        />
+        <Route
+          path="/welcome"
+          element={isLoggedIn ? <WelcomePage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/register"
+          element={<RegistrationForm />}
+        />
+        <Route
+          path="*"
+          element={<Navigate to="/login" />}
+        />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
