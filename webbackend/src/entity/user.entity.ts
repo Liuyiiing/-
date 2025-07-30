@@ -14,6 +14,7 @@ export class User extends BaseEntity {
 
   @Column({
     comment: '密码'
+    
   })
   password: string;
 

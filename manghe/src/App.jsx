@@ -4,6 +4,9 @@ import './App.css'
 import LoginForm from './LoginForm.jsx';
 import WelcomePage from './WelcomePage.jsx';
 import RegistrationForm from './RegistrationForm.jsx';
+import Shop from './shop.jsx';
+import Choose from './choose.jsx';
+import List from './list.jsx';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,6 +29,18 @@ function App() {
         <Route
           path="/register"
           element={<RegistrationForm />}
+        />
+        <Route
+          path="/shop"
+          element={<Shop />}
+        />
+        <Route
+          path="/choose/:productId"
+          element={<Choose />}
+        />
+        <Route
+          path="/list"
+          element={<List />}
         />
         <Route
           path="*"
